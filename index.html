@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bodhiva · Learn with curiosity</title>
+<meta name="description" content="Bodhiva: NCERT-based learning for school students.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/b.css">
+<style>
+html,body{height:100%}body{display:grid;grid-template-columns:240px 1fr;overflow:hidden}
+aside{background:var(--ink);color:#e5f1ef;padding:22px 14px;display:flex;flex-direction:column;gap:22px}
+.logo{display:flex;align-items:center;gap:10px;font:700 1.35rem var(--d);padding:0 8px}.logo img{width:32px;height:32px}
+aside nav{display:grid;gap:4px}aside button{appearance:none;border:0;background:none;color:#b5cdca;font:600 .95rem var(--b);display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:12px;cursor:pointer;text-align:left}
+aside button:hover{background:rgba(255,255,255,.07);color:#fff}aside button[aria-current=true]{background:#fff;color:var(--ink)}aside button:focus-visible{outline:3px solid var(--s)}
+aside svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.me{margin-top:auto;display:flex;align-items:center;gap:10px;padding:10px;border-radius:14px;background:rgba(255,255,255,.07)}.me small{display:block;color:#9bb8b4}
+main{min-width:0;display:flex}iframe{flex:1;border:0;width:100%;height:100%;background:var(--bg)}
+#in{display:none;position:fixed;inset:0;z-index:5;background:var(--bg);overflow:auto;grid-template-columns:1.05fr 1fr}
+body.in{grid-template-columns:1fr}body.in aside{display:none}body.in #in{display:grid}
+.bp{position:relative;overflow:hidden;color:#fff;padding:48px;display:flex;flex-direction:column;justify-content:space-between;gap:40px;background:radial-gradient(circle at 85% 12%,rgba(238,108,77,.55),transparent 40%),radial-gradient(circle at 10% 95%,rgba(91,75,138,.7),transparent 45%),#0b4a49}
+.bp:before{content:"";position:absolute;inset:-20%;background:repeating-radial-gradient(circle at 70% 60%,transparent 0 38px,rgba(255,255,255,.07) 38px 40px);pointer-events:none}.bp>*{position:relative}
+.bp h2{font-size:clamp(1.8rem,3.4vw,2.8rem);max-width:14ch}.bp ul{margin:0;padding:0;list-style:none;display:grid;gap:10px;color:#d3ebe8}.bp li:before{content:"";display:inline-block;width:9px;height:9px;margin-right:10px;border-radius:50%;background:var(--s)}
+.fp{display:grid;place-items:center;padding:32px 20px}.fc{width:100%;max-width:420px}.fc h1{font-size:1.9rem}.fc form{display:grid;gap:18px;margin-top:22px}
+.fc label,.fc legend{font-weight:700;font-size:.9rem}.fc fieldset{border:0;padding:0;margin:0;display:grid;gap:8px}
+.cs{display:flex;gap:12px}.cs label{position:relative;width:42px;height:42px}.cs input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer;width:100%;height:100%}.cs span{position:absolute;inset:0;border-radius:50%;background:var(--k);border:3px solid #fff;box-shadow:0 0 0 2px var(--line);pointer-events:none}.cs input:checked+span{box-shadow:0 0 0 3px var(--ink)}.cs input:focus-visible+span{outline:3px solid var(--s);outline-offset:3px}
+.msg{min-height:1.2em;color:#b2391c;font-size:.9rem}.lk{appearance:none;background:none;border:0;padding:0;color:var(--t);font:700 inherit;text-decoration:underline;cursor:pointer}
+@media(max-width:860px){body{grid-template-columns:1fr;grid-template-rows:1fr auto}aside{grid-row:2;flex-direction:row;padding:6px 6px max(6px,env(safe-area-inset-bottom));gap:0}.logo,.me{display:none}aside nav{display:flex;width:100%}aside button{flex:1;flex-direction:column;gap:2px;font-size:.62rem;padding:7px 2px;justify-content:center;text-align:center}
+#in{grid-template-columns:1fr}.bp{padding:28px 24px;gap:22px}.bp ul{display:none}}
+</style></head>
+<body class="in">
+<aside><div class="logo"><img src="assets/logo.svg" alt="">Bodhiva</div><nav id="n" aria-label="Main"></nav><div class="me"><span class="av" id="av">B</span><div><b id="mn">Learner</b><small id="mg"></small></div></div></aside>
+<main><iframe id="f" title="Bodhiva screen" hidden></iframe></main>
+<section id="in" aria-label="Sign in">
+<div class="bp"><div class="logo"><img src="assets/logo.svg" alt="">Bodhiva</div><div><h2>Learn every chapter, one step at a time.</h2></div><ul><li>Lessons that follow the NCERT syllabus</li><li>Practice at your own pace</li><li>Progress you can see</li></ul></div>
+<div class="fp"><div class="fc"><p class="eyebrow">Welcome</p><h1>Let's get you started</h1><p class="lead">Tell us a little about you. No email needed.</p>
+<form id="sf"><div><label for="sn">Your name</label><input class="in" id="sn" placeholder="e.g. Aarav" maxlength="16" autocomplete="off" style="margin-top:8px"></div>
+<div><label for="sg">Your grade</label><select class="in" id="sg" style="margin-top:8px"><option value="" selected disabled>Choose your class</option><option>Class 1</option><option>Class 2</option><option>Class 3</option><option>Class 4</option><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option><option>Class 11</option><option>Class 12</option></select></div>
+<fieldset><legend>Pick your colour</legend><div class="cs" id="cs"><label><input type="radio" name="c" value="#0f6b68" checked aria-label="Teal"><span style="--k:#0f6b68"></span></label><label><input type="radio" name="c" value="#d9532f" aria-label="Coral"><span style="--k:#d9532f"></span></label><label><input type="radio" name="c" value="#5b4b8a" aria-label="Plum"><span style="--k:#5b4b8a"></span></label><label><input type="radio" name="c" value="#2f6fd0" aria-label="Blue"><span style="--k:#2f6fd0"></span></label><label><input type="radio" name="c" value="#b9770e" aria-label="Amber"><span style="--k:#b9770e"></span></label></div></fieldset>
+<button class="btn" id="go" type="submit" style="padding:15px">Start learning</button><p class="msg" id="msg" role="status" aria-live="polite"></p></form>
+</div></div></section>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="assets/b.js"></script>
+<script>
+var S=[['home','Home','M3 11l9-8 9 8v10h-6v-6H9v6H3z'],['subjects','Subjects','M5 4h14v16H5zM9 9h6M9 13h6'],['practice','Practice','M12 3l2.600 5.600 6.100.7-4.500 4.200 1.200 6.100L12 16.600 6.600 19.600l1.200-6.100L3.300 9.300l6.100-.7z'],['progress','Progress','M4 20V10M10 20V4M16 20v-8M22 20H2']],K=S.map(function(s){return s[0]});
+S.forEach(function(s){var b=document.createElement('button');b.dataset.k=s[0];b.innerHTML='<svg viewBox="0 0 24 24"><path d="'+s[2]+'"/></svg>'+s[1];b.onclick=function(){go(s[0])};n.appendChild(b)});
+function who(){var a=B.get('accent','#0f6b68');document.documentElement.style.setProperty('--acc',a);av.style.background=a;mn.textContent=B.get('name','Learner');av.textContent=mn.textContent[0].toUpperCase();mg.textContent=B.get('grade','')}
+function go(k){if(k!=='signin'&&K.indexOf(k)<0)k='signin';var s=k==='signin';document.body.classList.toggle('in',s);f.hidden=s;
+ if(!s){who();f.src='screens/'+k+'.html'}
+ n.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-current',b.dataset.k===k)});try{history.replaceState(null,'','#'+k)}catch(e){}}
+addEventListener('message',function(e){if(e.data&&e.data.bv)go(e.data.bv)});
+/* Optional Supabase saving: paste both values from Project Settings -> API. Leave empty to run without saving. */
+var SUPABASE_URL='',SUPABASE_ANON_KEY='',sb=null,failed=false,sf=document.getElementById('sf');
+try{if(SUPABASE_URL&&SUPABASE_ANON_KEY&&window.supabase)sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY)}catch(e){}window.sb=sb;
+function user(){return sb.auth.getSession().then(function(r){if(r.data&&r.data.session)return r.data.session.user;return sb.auth.signInAnonymously().then(function(x){if(x.error)throw x.error;return x.data.user})})}
+sf.addEventListener('submit',function(e){e.preventDefault();var btn=document.getElementById('go'),row={name:sn.value.trim()||'Learner',grade:sg.value,color:sf.elements.c.value,updated_at:new Date().toISOString()};
+ B.set('name',row.name);B.set('grade',row.grade);B.set('accent',row.color);msg.textContent='';
+ if(!sb||failed){go('dashboard');return}
+ btn.disabled=true;user().then(function(u){row.user_id=u.id;return sb.from('explorers').upsert(row)}).then(function(r){if(r.error)throw r.error;btn.disabled=false;go('dashboard')}).catch(function(){failed=true;btn.disabled=false;msg.textContent='We could not save your profile. Press Start learning again to continue without saving.'})});
+cs.addEventListener('change',function(e){document.documentElement.style.setProperty('--acc',e.target.value)});
+sn.value=B.get('name','')==='Learner'?'':B.get('name','');
+go(location.hash.slice(1)||'signin');
+</script></body></html>
